@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>PROYECTO SEQUOIA · Visita virtual — SOMOS GROUP</title>
+<meta name="description" content="Recorre el PROYECTO SEQUOIA: casa de 200 m² en dos niveles. Video cinematográfico, interiores, planos y ficha técnica.">
+<link rel="stylesheet" href="css/estilos.css">
+<script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<!-- HERO -->
+<header class="hero">
+  <video class="hero-video" autoplay muted loop playsinline preload="metadata"
+    src="assets/media-generation-sequoia-fachada-atardecer-0-ad9a8fce-7c24-4d06-9f27-8459ce8eb0d1.mp4"></video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-kicker">SOMOS GROUP · Visita virtual</p>
+    <h1>PROYECTO<br>SEQUOIA</h1>
+    <p class="hero-sub">Casa de 200 m² en dos niveles.<br>Más que espacios, experiencias de vida.</p>
+    <div class="hero-ctas">
+      <a href="#recorrido" class="btn btn-primary">Recorrer la casa</a>
+      <button class="btn btn-ghost" id="btnTour">▶ Recorrido guiado</button>
+    </div>
+  </div>
+  <a href="#recorrido" class="scroll-hint" aria-label="Bajar">↓</a>
+</header>
+
+<!-- FACHADA INTERACTIVA -->
+<section id="recorrido" class="section">
+  <div class="wrap">
+    <p class="kicker reveal">Recorrido interactivo</p>
+    <h2 class="reveal">Toca los puntos y entra a cada ambiente</h2>
+    <div class="fachada reveal" id="fachada">
+      <img src="assets/sequoia-hero-exterior.png" alt="Fachada del PROYECTO SEQUOIA al atardecer">
+      <!-- hotspots se generan desde datos.js -->
+    </div>
+    <p class="hint reveal">Toca un punto brillante para ver el video del ambiente.</p>
+  </div>
+</section>
+
+<!-- INTERIORES -->
+<section id="interiores" class="section section-alt">
+  <div class="wrap">
+    <p class="kicker reveal">Vistas internas</p>
+    <h2 class="reveal">Espacios que inspiran</h2>
+    <div class="grid" id="galeria"><!-- tarjetas desde datos.js --></div>
+  </div>
+</section>
+
+<!-- PLANTAS -->
+<section id="plantas" class="section">
+  <div class="wrap">
+    <p class="kicker reveal">Planta arquitectónica</p>
+    <h2 class="reveal">Conoce la distribución</h2>
+    <div class="tabs reveal">
+      <button class="tab active" data-nivel="1">Primer nivel</button>
+      <button class="tab" data-nivel="2">Segundo nivel</button>
+    </div>
+    <div class="plano-viewport reveal" id="planoViewport">
+      <img id="planoImg" src="assets/planta-nivel1.png" alt="Plano arquitectónico">
+    </div>
+    <div class="zoom-controls reveal">
+      <button id="zoomOut" aria-label="Alejar">−</button>
+      <button id="zoomReset">Ver completo</button>
+      <button id="zoomIn" aria-label="Acercar">+</button>
+    </div>
+    <p class="hint reveal">Puedes acercar con los botones o con dos dedos en el celular.</p>
+  </div>
+</section>
+
+<!-- FICHA -->
+<section id="ficha" class="section section-alt">
+  <div class="wrap">
+    <p class="kicker reveal">Ficha del proyecto</p>
+    <h2 class="reveal">SEQUOIA · 200 m²</h2>
+    <div class="specs reveal">
+      <div class="spec"><strong>200 m²</strong><span>construidos</span></div>
+      <div class="spec"><strong>2</strong><span>niveles</span></div>
+      <div class="spec"><strong>4</strong><span>habitaciones</span></div>
+      <div class="spec"><strong>4</strong><span>baños</span></div>
+      <div class="spec"><strong>21 m</strong><span>de frente</span></div>
+      <div class="spec"><strong>NSR-10</strong><span>sismoresistencia</span></div>
+    </div>
+    <h3 class="reveal">Ambientes</h3>
+    <ul class="checklist reveal">
+      <li>Sala a doble altura con muro en piedra natural</li>
+      <li>Cocina en isla + terraza BBQ</li>
+      <li>Habitación principal con vestier y baño privado</li>
+      <li>3 habitaciones secundarias con closet</li>
+      <li>Piscina con solárium en madera</li>
+      <li>Zona de ropas y parqueadero cubierto</li>
+    </ul>
+    <h3 class="reveal">Acabados</h3>
+    <ul class="checklist reveal">
+      <li>Gris mineral y cemento taupe</li>
+      <li>Aluminio negro y vidrio laminado</li>
+      <li>Fibrocemento tipo madera y madera teca</li>
+      <li>Piedra natural y vegetación integrada</li>
+    </ul>
+    <a class="btn btn-primary btn-big" id="ctaVisita" href="#" target="_blank" rel="noopener">Agendar visita por WhatsApp</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <p><strong>SOMOS GROUP</strong> · Más que espacios, experiencias de vida.</p>
+  <p class="fine">Arquitectura que emociona · Naturaleza · Confort · Diseño · Funcionalidad</p>
+</footer>
+
+<!-- Botón flotante WhatsApp -->
+<a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32" width="30" height="30" fill="currentColor"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.4.7 4.6 1.9 6.5L4 29l7.7-1.8c1.8 1 3.9 1.6 6.1 1.6h.2c6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-2 0-3.9-.5-5.5-1.5l-.4-.2-4.6 1.1 1.2-4.4-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.8C4.7 9.7 9.6 4.8 16 4.8S27.3 9.7 27.3 16 22.4 24.8 16 24.8zm6-8.1c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1.1-1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.2-.6l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6L14.2 9c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.2-.7.5-.2.3-.9 1-.9 2.5s1 2.9 1.1 3.1c.1.2 1.9 3 4.7 4.1.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.2-.6-.4z"/></svg>
+</a>
+
+<!-- MODO GUIADO (capítulos a pantalla completa) -->
+<div class="guia" id="guia" aria-hidden="true">
+  <div class="guia-progress"><div class="guia-bar" id="guiaBar"></div></div>
+  <button class="guia-exit" id="guiaExit" aria-label="Salir del recorrido">✕</button>
+  <div class="guia-track" id="guiaTrack"><!-- capítulos desde app.js --></div>
+  <nav class="guia-nav" aria-label="Capítulos">
+    <button id="guiaPrev" aria-label="Capítulo anterior">↑</button>
+    <div class="guia-dots" id="guiaDots"></div>
+    <button id="guiaNext" aria-label="Capítulo siguiente">↓</button>
+  </nav>
+  <p class="guia-count" id="guiaCount">01 / 08</p>
+</div>
+
+<!-- TARJETA DE FICHA (bottom sheet) -->
+<div class="sheet" id="sheet" aria-hidden="true">
+  <div class="sheet-box">
+    <button class="modal-close" id="sheetClose" aria-label="Cerrar">✕</button>
+    <p class="sheet-kicker">Ficha del ambiente</p>
+    <h3 id="sheetTitle"></h3>
+    <ul class="sheet-list" id="sheetList"></ul>
+    <a class="btn btn-primary btn-big" id="sheetWa" href="#" target="_blank" rel="noopener">Preguntar por este ambiente</a>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose" aria-label="Cerrar">✕</button>
+    <video id="modalVideo" controls playsinline preload="metadata"></video>
+    <div class="modal-info">
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+      <ul class="sheet-list" id="modalFicha"></ul>
+      <a class="btn btn-primary" id="modalWa" href="#" target="_blank" rel="noopener">Preguntar por este ambiente</a>
+    </div>
+  </div>
+</div>
+
+<script src="js/datos.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
